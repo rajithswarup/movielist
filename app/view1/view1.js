@@ -23,9 +23,8 @@ angular.module('myApp.view1', ['ngRoute','angularUtils.directives.dirPagination'
    console.log(response);    
    // $scope.response = response.data;
         $scope.results = response.data;
-        $scope.url="http://localhost:8000//index.html#!/view1"
-       
-        $scope.id;
+      //  $scope.receivedImage = 'data:image/png;base64,'+_arrayBufferToBase64(response);
+         $scope.id;
     angular.forEach(response.data.results, function(index, element) 
     {
         $scope.movie.push(index);
@@ -110,8 +109,24 @@ $scope.getfavoriteList=function()
   $window.alert(storedNames);
 
 } 
-});
+$scope.getIcon=function(file)
+{
+  console.log(file);
+  'data:image/jpg;base64,'+_arrayBufferToBase64(file);
 
+}
+});
+// Convert the buffer to base64
+var _arrayBufferToBase64 = function( buffer ) {
+  var binary = '';
+  var bytes = new Uint8Array( buffer );
+  var len = bytes.byteLength;
+  console.log(len);
+  for (var i = 0; i < len; i++) {
+      binary += String.fromCharCode( bytes[ i ] );
+  }
+  return window.btoa( binary );
+};
 
 
 

@@ -30,6 +30,7 @@
                <th>Name</th>  
                <th>Relase Date</th>  
                <th>details</th>
+               <th>favorite</th>
             </tr>  
            
           <!-- <div ng-controller="View2Ctrl" id="view2.html">-->
@@ -38,7 +39,7 @@
          
                   <td>{{$index}}</td>
                   <td>{{a.original_title}}</td>  
-                  <td>{{a.original_title }}</td> 
+                  <td>{{a.release_date }}</td> 
                   <td>
                      <input type="button" value="details" ng-click="movieDetails(a.id)" />
                  </td>
@@ -54,7 +55,8 @@
                      <td>{{$index}}</td>
                      <td>{{a.original_title}}</td>  
                      <td>{{a.release_date }}</td>
-                <!--    <div ng-init="myVar = 'a.backdrop_path'">          
+                  <!--<td><img   id="icon" class="cercle icon" src={{getIcon(a.backdrop_path)}} alt=""/></td>
+                   <div ng-init="myVar = 'a.backdrop_path'" >          
                     <td><img ng-src="{{a.backdrop_path}}"  alt=""  class="img-responsive" /></td>   -->      
                      <td>
                         <input type="button" value="details" ng-click="movieDetails(a.id)" />
