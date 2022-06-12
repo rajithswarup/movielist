@@ -1,0 +1,110 @@
+<!--<p>This is the partial for view 1.</p><p>Subjects:</p>-->
+<!DOCTYPE html>  
+<html>  
+<head>  
+ <title>Angular JS Includes</title>  
+    <style>  
+         table, th , td {  
+            border: 1px solid grey;  
+            border-collapse: collapse;  
+            padding: 5px;  
+         }  
+           
+         table tr:nth-child(odd) {  
+            background-color: #f2f2f2;  
+         }  
+           
+         table tr:nth-child(even) {  
+            background-color: #ffffff;  
+         }  
+      </style>  
+   </head>  
+   <body>  
+      <h2>List Of Movies</h2>      
+        <input type="button"ng-model="activeCustomer" value="rateby" ng-class="{'active':activeCustomer === 'active'}" class="btn btn-default" ng-click="ratedBy($event)">
+        <input type="button" value="getfavoriteList" ng-click="getfavoriteList()"/>
+      <div ng-app = "myApp" ng-controller = "View1Ctrl">          
+         <table>  
+            <tr> 
+               <th>SNO</th> 
+               <th>Name</th>  
+               <th>Relase Date</th>  
+               <th>image</th> 
+               <th>details</th>
+            </tr>  
+           
+          <!-- <div ng-controller="View2Ctrl" id="view2.html">-->
+            <div ng-if="activeCustomer == 'active'">
+               <tr ng-repeat = "a in rate track by $index">  
+         
+                  <td>{{$index}}</td>
+                  <td>{{a.original_title}}</td>  
+                  <td>{{a.original_title }}</td> 
+                  <td>
+                     <input type="button" value="details" ng-click="movieDetails(a.id)" />
+                 </td>
+               
+         </tr> 
+         </div>
+        
+      <!--  <div>{{noOfPages}} &nbsp; {{currentPage}} &nbsp; {{maxSize}}
+      <pagination ng-model="currentPage" total-items="movie.length" items-per-page="5"></pagination>
+    </div>-->
+            <tr dir-paginate = "a in movie| itemsPerPage: 10">  
+         
+                     <td>{{$index}}</td>
+                     <td>{{a.original_title}}</td>  
+                     <td>{{a.release_date }}</td>
+                     <div ng-init="myVar = 'a.backdrop_path'">          
+                    <td><img ng-src="{{a.backdrop_path}}"  alt=""  class="img-responsive" /></td>         
+                     <td>
+                        <input type="button" value="details" ng-click="movieDetails(a.id)" />
+                    </td>
+                    <td><input type="button" value="do favorite" ng-click="favorite(a.original_title)"/></td>
+                  
+                  
+            </tr>  
+           
+         </table> 
+      </div> 
+         <dir-pagination-controls>
+            max-size="10"
+direction-links="false"
+boundary-links="true" >
+         </dir-pagination-controls> 
+     
+    
+<script>
+    
+</script>
+     
+     
+        
+   <!--  <script>  
+         function ratedBy($scope,$http)
+          {  
+            //$scope.activeCustomer='active';
+            //$scope.activeCustomer=active.currentTarget.value;
+            var url = "https://api.themoviedb.org/3/movie/top_rated?api_key=82fa3e0ef7a423ae707ff8078a2080ee&language=en-US&page=1";  
+           
+            $http.get(url).then(function(response)
+             {  
+                console.log(response);
+               $scope.response = response.data;  
+               $scope.movie=[];
+                 $scope.id;
+                 angular.forEach(response.data.results, function(index, element) 
+                 {
+               $scope.movie.push(index);
+               console.log($scope.movie)
+             //  $scope.response["results"]=response["results"];
+            });
+            $scope.isVisible = function(name)
+            {
+                   return false;// return false to hide this artist's albums
+                }
+         });
+      }
+      </script>  -->
+         </body>  
+         </html>  

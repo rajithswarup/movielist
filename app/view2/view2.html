@@ -1,0 +1,80 @@
+<!--<p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter: {{ 'Current version is v%VERSION%.' | interpolate }}
+</p>-->
+<!DOCTYPE html>  
+<html>  
+<head> 
+</head>
+<body>  
+    <div><h2>movie Details<h2></div>  
+    <md-card>
+  <div ng-app = "myApp" ng-controller = "View2Ctrl">
+    <table>  
+      
+    <!--<tr ng-repeat="a in details track by $index">
+      <td>{{$index}}</td>
+      <td>{{a}}</td>
+      </tr> -->
+      <tr ng-repeat="(key, value) in details">
+        <td> {{key}} </td> <td> {{ value }} </td>
+      </tr>
+  </table>
+  </div>
+    </body>
+</html>
+
+
+ <!--   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular.js"></script>
+    <script type="text/javascript" src="//rawgit.com/angular/bower-material/master/angular-material.js"></script>
+    <link rel="stylesheet" type="text/css" href="//rawgit.com/angular/bower-material/master/angular-material.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic" />
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular-messages.min.js"></script>
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular-animate.min.js"></script>
+      <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.0/angular-aria.min.js"></script>
+    </head>
+    <body >
+      <md-content layout="column" flex layout-align="center" layout-fill>
+        <div flex="70" class="content" ui-view>
+          <md-item ng-repeat="a in details" class="item">
+                <div class="md-tile-content" layout="column" layout-align="center start">
+                  <h3>{{ a.original_title }}</h3>
+      </div> 
+      </md-item-content> 
+      </md-item>
+      </md-content>-->
+</head>
+
+<!--<body>
+
+      <section layout="row" layout-sm="column"  layout-wrap>
+      <md-item ng-repeat="a in details" layout="column">
+                  <md-card>
+                      <md-card-title>
+                          <md-card-title-text>
+                            <div class="md-subhead">
+                              <h3>{{a}}</h3>
+                              
+                            </div>
+                              
+                              <span class="md-headline">FullName</span>
+                              <span class="md-subhead">ContactNum</span>
+                          </md-card-title-text>
+      
+                      </md-card-title>
+      
+                      <md-card-content>
+                          <p>
+                              address
+                          </p>
+                      </md-card-content>
+      
+                      <md-card-actions layout="column" layout-align="end center">
+                          <md-button>Collect</md-button>
+                      </md-card-actions>
+      
+                  </md-card>
+              </md-item>
+              </section>
+            
+        </body>-->
