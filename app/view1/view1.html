@@ -29,7 +29,6 @@
                <th>SNO</th> 
                <th>Name</th>  
                <th>Relase Date</th>  
-               <th>image</th> 
                <th>details</th>
             </tr>  
            
@@ -55,8 +54,8 @@
                      <td>{{$index}}</td>
                      <td>{{a.original_title}}</td>  
                      <td>{{a.release_date }}</td>
-                     <div ng-init="myVar = 'a.backdrop_path'">          
-                    <td><img ng-src="{{a.backdrop_path}}"  alt=""  class="img-responsive" /></td>         
+                <!--    <div ng-init="myVar = 'a.backdrop_path'">          
+                    <td><img ng-src="{{a.backdrop_path}}"  alt=""  class="img-responsive" /></td>   -->      
                      <td>
                         <input type="button" value="details" ng-click="movieDetails(a.id)" />
                     </td>
